@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+//const port = 3000
 
 //set view engine
 app.set("view engine","jade")
@@ -274,4 +274,8 @@ app.get('/event2', function (req, res) {
                             });
 });
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+//app.listen(port, () => console.log(`App listening on port ${port}!`));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
